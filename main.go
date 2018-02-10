@@ -95,6 +95,7 @@ func getKeysOutOfThatMap(mapv map[string]interface{}) []string {
 
 func getHostFromUser(current interface{}) (Host) {
 	_, val := current.(map[string]interface{})["IsHost"]
+	clearTheScreen()
 	if val {
 		return createFromMap(current.(map[string]interface{}))
 	}
@@ -115,6 +116,7 @@ func getHostFromUser(current interface{}) (Host) {
 
 func getHostToDelFromUser(current interface{}) (bool) {
 	_, val := current.(map[string]interface{})["IsHost"]
+	clearTheScreen()
 	if val {
 		if isUserIsSure(createFromMap(current.(map[string]interface{})).Ip) {
 			return true

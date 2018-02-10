@@ -117,7 +117,7 @@ func configWithPassword(user *string, password *string) *ssh.ClientConfig {
 
 func findCorrectShhConfigForThisHost(host *Host, pass *string, sshPass *string) *ssh.ClientConfig {
 	if len(host.SshKeyPath) > 0 {
-		if len(*pass) > 0 {
+		if len(*sshPass) > 0 {
 			return configWithShhKeyWithPassword(&host.User, &host.SshKeyPath, sshPass)
 		} else {
 			return configWithSshKey(&host.User, &host.SshKeyPath)

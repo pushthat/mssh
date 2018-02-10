@@ -14,9 +14,16 @@ func clearTheScreen() {
 }
 
 func askUserUser() string {
-
+	validate := func(input string) error {
+		if len(input) > 0 {
+			return nil
+		} else {
+			return errors.New("User must contain at least one character")
+		}
+	}
 	prompt := promptui.Prompt{
 		Label: "User",
+		Validate: validate,
 	}
 	result, err := prompt.Run()
 	check(err)
@@ -109,8 +116,17 @@ func askUserSshPath() (string, string) {
 }
 
 func askUserName() string {
+	validate := func(input string) error {
+		if len(input) > 0 {
+			return nil
+		} else {
+			return errors.New("Name must contain at least one character")
+		}
+	}
+
 	prompt := promptui.Prompt{
-		Label: "Name",
+		Label:    "Name",
+		Validate: validate,
 	}
 	result, err := prompt.Run()
 	check(err)

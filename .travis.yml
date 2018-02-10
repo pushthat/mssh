@@ -18,7 +18,7 @@ script:
   - go vet ./...
   - go test -v -race ./...
   # Only build binaries from the latest Go release.
-  - gox -os="linux darwin windows" -arch="amd64" -output="logshare.." -ldflags "-X main.Rev=`git rev-parse --short HEAD`" -verbose ./...;
+  - if [ "${LATEST}" = "true" ]; then gox -os="linux darwin windows" -arch="amd64" -output="logshare.." -ldflags "-X main.Rev=`git rev-parse --short HEAD`" -verbose ./...; fi
 
 deploy:
   provider: releases
@@ -32,4 +32,4 @@ deploy:
   on:
     repo: pushthat/mssh
     tags: true
-#    condition: $LATEST = true
+    condition: $LATEST = true

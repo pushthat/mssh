@@ -7,7 +7,7 @@ matrix:
     - go: tip
 
 before_install:
-  - go get github.com/pushthat/mssh
+  - go get github.com/mitchellh/gox
 
 install:
   - # skip

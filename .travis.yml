@@ -32,4 +32,3 @@ deploy:
   on:
     repo: pushthat/mssh
     tags: true
-    condition: $LATEST = true

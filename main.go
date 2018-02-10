@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/docopt/docopt-go"
 	"fmt"
+	"os"
 )
 
 var msshVersion = "0.5"
@@ -10,7 +11,7 @@ var addHostKey = "+ Host"
 var addProjectKey = "+ Project"
 var goBackKey = "<-Back"
 var rmTheRepoKey = "Delete the project"
-var pathToStorageFile = "~/.mssh_storage.json"
+var pathToStorageFile = os.Getenv("HOME") + "/.mssh_storage.json"
 var sshMap map[string]interface{}
 var globalPath = make([]string, 0)
 

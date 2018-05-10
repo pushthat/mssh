@@ -142,7 +142,7 @@ func initiateConnection(host *Host, result chan error, pass *string, sshPass *st
 }
 
 func lauchSshClientBet(host *Host) {
-	cmd := exec.Command("ssh",  host.User + "@" + host.Ip)
+	cmd := exec.Command("ssh", "-i" + host.SshKeyPath, host.User + "@" + host.Ip)
 	cmd.Stdout = os.Stdout
 	cmd.Stdin = os.Stdin
 	cmd.Stderr = os.Stderr

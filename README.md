@@ -7,3 +7,4 @@
 [![asciicast](https://asciinema.org/a/3KInkmzneXOYs5Sk04kZkrC1b.png)](https://asciinema.org/a/3KInkmzneXOYs5Sk04kZkrC1b)
 
 Feel free to contribute.
+Binaries are available on release.
